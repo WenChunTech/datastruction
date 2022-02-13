@@ -35,12 +35,28 @@ void RadixSort(int *arr, int len)
             k = (arr[j] / radix) % 10;
             count[k]++;
         }
+
+        for (int j = 1; j < 10; j++)
+            count[j] = count[j - 1] + count[j];
+
+        for (int j = len - 1; j >= 0; j--)
+        {
+            k = (arr[j] / radix) % 10;
+            bucketCount[count[k] - 1] = arr[j];
+            count[k]--;
+        }
+        for (int j = 0; j < len; j++)
+            arr[j] = bucketCount[j];
+        radix *= 10;
     }
+    free(count);
+    free(bucketCount);
 }
 
 int main()
 {
-    int arr[] = {1, 3, 2, 5, 8, 3, 9, 4};
+    // int arr[] = {1, 3, 2, 5, 8, 3, 9, 4};
+    int arr[] = {1, 4443, 222, 5, 98, 23, 79, 14};
     RadixSort(arr, 8);
     for (int i = 0; i < 8; i++)
     {
