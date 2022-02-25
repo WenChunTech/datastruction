@@ -39,7 +39,7 @@ void BucketSort(int *arr, int len)
             maxItem = arr[i];
     }
     int bucketLenth = (maxItem - minItem) - (len - 1);
-    int **bucketTable = malloc(bucketLenth * 10 * sizeof(int));
+    int **bucketTable = malloc(bucketLenth * BUCKETELEMENTNUMBER * sizeof(int));
     int *bucketIndexTable = (int *)calloc(bucketLenth, sizeof(int *));
     for (int i = 0; i < bucketLenth; i++)
         bucketTable[i] = (int *)calloc(BUCKETELEMENTNUMBER, sizeof(int));
