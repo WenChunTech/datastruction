@@ -86,7 +86,5 @@ int main() {
     postOrder(n1);
     printf("\n");
 
-
-
     return 0;
 }
