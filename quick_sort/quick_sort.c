@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void QuickSort(int *arr, int low, int high)
+void QuickSort(int* arr, int low, int high)
 {
     if (low < high)
     {
@@ -10,9 +10,9 @@ void QuickSort(int *arr, int low, int high)
     }
 }
 
-int Partition(int *arr, int low, int high)
+int Partition(int* arr, int low, int high)
 {
-    int key = arr[0];
+    int key = arr[low];
     while (low < high)
     {
         while (low < high && key <= arr[high])
@@ -28,7 +28,7 @@ int Partition(int *arr, int low, int high)
 
 int main()
 {
-    int arr[] = {1, 3, 2, 5, 8, 3, 9, 4};
+    int arr[] = { 1, 3, 2, 5, 8, 3, 9, 4 };
     QuickSort(arr, 0, 7);
     for (int i = 0; i < 8; i++)
     {
