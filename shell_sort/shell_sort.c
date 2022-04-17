@@ -17,14 +17,6 @@ void ShellSort(int* arr, int len)
     }
 }
 
-void print_arr(int* arr, int len, char* sort_name) {
-    printf("%11s:", sort_name);
-    for (int i = 0; i < len; i++) {
-        printf("%d\t", arr[i]);
-    }
-    printf("\n");
-}
-
 int main()
 {
     int arr[] = { 1, 3, 2, 5, 8, 3, 9, 4 };
@@ -34,9 +26,5 @@ int main()
         printf("%d ", arr[i]);
     }
     printf("\n");
-    int arr1[] = { 10, 6, 2, 7, 88, 4, 66, 66, 10, 44 };
-    int len = 10;
-    ShellSort(arr1, len);
-    print_arr(arr1, len, "insert sort");
     return 0;
 }
