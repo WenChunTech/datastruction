@@ -1,20 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void CountSort(int *arr, int len)
+void CountSort(int* arr, int len)
 {
     int minItem, maxItem;
-    minItem = 100;
-    maxItem = 0;
-    for (int i = 0; i < len; i++)
+    minItem = arr[0];
+    maxItem = arr[0];
+    for (int i = 1; i < len; i++)
     {
         if (arr[i] > maxItem)
             maxItem = arr[i];
-        if (arr[i] < minItem)
+        else if (arr[i] < minItem)
             minItem = arr[i];
+        else continue;
     }
     int itemNum = maxItem - minItem + 1;
-    int *tempArr = (int *)calloc(itemNum, sizeof(int));
+    int* tempArr = (int*)calloc(itemNum, sizeof(int));
     for (int i = 0; i < len; i++)
     {
         tempArr[arr[i] - minItem]++;
@@ -34,7 +35,7 @@ void CountSort(int *arr, int len)
 
 int main()
 {
-    int arr[] = {2, 5, 3, 5, 6, 8, 1};
+    int arr[] = { 2, 5, 3, 5, 6, 8, 1 };
     CountSort(arr, 7);
     for (int i = 0; i < 7; i++)
     {

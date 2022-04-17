@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define MAXSIZE 8
 
-void Merge(int *arr, int *tmp, int low, int middle, int high)
+void Merge(int* arr, int* temp, int low, int middle, int high)
 {
     int i, j;
     int num = high - low + 1;
@@ -9,42 +9,42 @@ void Merge(int *arr, int *tmp, int low, int middle, int high)
     {
         if (arr[low] < arr[j])
         {
-            tmp[i] = arr[low++];
+            temp[i] = arr[low++];
         }
         else
         {
-            tmp[i] = arr[j++];
+            temp[i] = arr[j++];
         }
     }
     while (low <= middle)
     {
-        tmp[i++] = arr[low++];
+        temp[i++] = arr[low++];
     }
     while (j <= high)
     {
-        tmp[i++] = arr[j++];
+        temp[i++] = arr[j++];
     }
     for (int k = 0; k < num; k++, high--)
     {
-        arr[high] = tmp[high];
+        arr[high] = temp[high];
     }
 }
 
-void MergeSort(int *arr, int *tmp, int low, int high)
+void MergeSort(int* arr, int* temp, int low, int high)
 {
     int middle;
     if (low < high)
     {
         middle = (low + high) / 2;
-        MergeSort(arr, tmp, low, middle);
-        MergeSort(arr, tmp, middle + 1, high);
-        Merge(arr, tmp, low, middle, high);
+        MergeSort(arr, temp, low, middle);
+        MergeSort(arr, temp, middle + 1, high);
+        Merge(arr, temp, low, middle, high);
     }
 }
 
 int main()
 {
-    int arr[] = {1, 3, 2, 5, 8, 3, 9, 4};
+    int arr[] = { 1, 3, 2, 5, 8, 3, 9, 4 };
     int temp[MAXSIZE];
     MergeSort(arr, temp, 0, MAXSIZE - 1);
     for (int i = 0; i < 8; i++)
