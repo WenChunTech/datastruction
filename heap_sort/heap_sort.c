@@ -26,7 +26,7 @@ void HeapSort(int* arr, int len)
     {
         HeapAdjust(arr, i, len);
     }
-    for (int i = len - 1; i >= 0; i--)
+    for (int i = len - 1; i > 0; i--)
     {
         swap(arr, 0, i);
         HeapAdjust(arr, 0, i);

@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func CountSort(arr []int) {
-	minItem := 100
-	maxItem := 0
-	for i := 0; i < len(arr); i++ {
+	minItem := arr[0]
+	maxItem := arr[0]
+	for i := 1; i < len(arr); i++ {
 		if arr[i] > maxItem {
 			maxItem = arr[i]
 		}
