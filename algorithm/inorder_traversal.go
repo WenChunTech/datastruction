@@ -6,8 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello, 世界")
-	syscall.Socket(syscall.AF_INET, syscall.SOCK_STREAM, 0)
 }
 
 type TreeNode struct {
