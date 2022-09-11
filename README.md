@@ -1,2 +1,2 @@
 # datastruction
-learning datastruction
+learning datastruction and algorithm
